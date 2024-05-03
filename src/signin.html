@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=}, initial-scale=1.0">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
     <title>Pets | Login User</title>
     <link rel= "icon" type="imagen/png" href="icons/dog.png">
     
@@ -11,10 +11,11 @@
     <center>
         <img src="images/pet-shop (1).png" width="100"><br>
     </center>
-    <form name="signup-form" action="" method="post">
-        <table border="0" align="center">
-
-        </table>
+    <form action="backend/signin.php" method="post">
+<input type="email" name="email" required placeholder="@">
+<input type="password" name="passwd" required placeholder="******">
+<button>Login</button>
+<a href="signup.html">Create an account</a>
     </form>
 </body>
 </html>
