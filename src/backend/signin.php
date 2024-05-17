@@ -1,5 +1,14 @@
 <?php
    include('../../config/database.php');
+
+   session_start();
+
+   if(isset($_SESSION)["id_user"]){
+   header ("location:../home.php");
+
+   }
+
+   if(!empty($_POST)){
    $email =$_POST['email'];
    $passwd =$_POST['passwd'];
    $enc_pass = md5($passwd);
@@ -19,8 +28,13 @@
    $total = pg_num_rows( $result);
 
    if($total > 0){
-      header("refresh:0;url=../home.php");
+      $row = pg_fetch_assoc($result);
+      $_SESSION['id_user'] = $row ['id'];
+      $_SESSION['user_name'] = $row ['fullname'];
+      //header("refresh:0;url=../home.php");
    }else{
-      echo "credenciales incorrectas";
+      echo "<script>alert('Invalid email or password')</scripts>";
+      header("refresh:0;url=../signin.html");
    }
+}
 ?>
