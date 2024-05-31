@@ -1,13 +1,10 @@
 <?php
-
-session_start();
-if(isset($_SESSION)["id_user"]){
-    header ("location:../home.php");
-}else{
-
-    header ("location:signin.php");
-
-}
+    session_start();
+    if(isset($_SESSION["id_user"])){
+        //header("Location:home.php");
+        header("refresh:0;url=home.php");
+        exit;
+    }
 ?>
 
 
@@ -25,10 +22,14 @@ if(isset($_SESSION)["id_user"]){
         <img src="images/pet-shop (1).png" width="100"><br>
     </center>
     <form action="backend/signin.php" method="post">
-<input type="email" name="email" required placeholder="@">
-<input type="password" name="passwd" required placeholder="******">
-<button>Login</button>
-<a href="signup.html">Create an account</a>
+<body>
+<center>
+    <form action="backend/signin.php" method="post">
+    <input type="email" name="email" required placeholder="@">
+        <input type="password" name="passwd" required placeholder="*****">
+        <button>Login</button>
+        &nbsp;<a href = "signup.html">Create an account</a>
+        </center>
     </form>
 </body>
 </html>

@@ -6,21 +6,20 @@
     <title>Pet | New User</title>
     <link rel= "icon" type="imagen/png" href="icons/dog.png">
 </head>
-<body bgcolor="#000000">
+<body>
     <center>
         <img src="images/edit.png" width="100"><br>
     </center>
 <form name="signup-form" action="backend/signup.php" method="post">
-<table border="0" align="center">
-<tr><td><input type="text" name="fname" placeholder="Fullname" required></td></tr>
-<tr><td><input type="text" name="email" placeholder="jeo@email.com" required></td></tr>
-<tr><td><input type="password" name="passwd" placeholder="***********" required></td></tr>
-<tr><td align="center"><button>Register</button>
-<tr><td align="center"></td><a href="signin.html">Go to login</a>
-</table>
-
-
-</form>
-
+    <form name="signup-form" action="backend/signup.php" method="post">
+        <table border="0" align="center">
+            <tr><td align="center"><input type="text" name="fname" placeholder="Fullname" required></td></tr>
+            <tr><td align="center"><input type="email" name="email" placeholder="joe@mail.com" required></td></tr>
+            <tr><td align="center"><input type="password" name="passwd" placeholder="*********" required></td></tr>
+            <tr><td align="center"><input type='file' name='user_photo'></td></tr>
+            <tr><td align="center"><button>Register</button></td></tr>
+            <tr><td align="center"><a href = "signin.php">Go to login</a></td></tr>    
+        </table>
+    </form>   
 </body>
 </html>
